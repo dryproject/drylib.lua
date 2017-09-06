@@ -1,0 +1,19 @@
+# https://github.com/mpeterv/hererocks#using-hererocks-to-set-up-automated-testing
+language: python
+sudo: false
+env:
+  - LUA="lua 5.3"
+  - LUA="luajit 2.1"
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: LUA="luajit 2.1"
+before_install:
+  - pip install hererocks
+  - hererocks env --$LUA -rlatest
+  - source env/bin/activate
+  - luarocks install busted
+install:
+  - #luarocks make
+script:
+  - lua test.lua
