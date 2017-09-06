@@ -13,8 +13,16 @@ Caveats
 Installation
 ============
 
+::
+
+   $ luarocks install drylib
+
 Usage
 =====
+
+::
+
+   local dry = require 'drylib'
 
 Reference
 =========
