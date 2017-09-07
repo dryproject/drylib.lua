@@ -22,7 +22,7 @@ Usage
 
 ::
 
-   local dry = require 'drylib'
+   dry = require 'drylib'
 
 Reference
 =========
